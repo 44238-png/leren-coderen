@@ -26,12 +26,19 @@
             margin: 10px;
             background-color: lightblue;
         }
+
+        #klok {
+            font-size: 30px;
+            font-weight: bold;
+            color: blue;
+        }
     </style>
 </head>
 
 <body>
 
     <h1>Mijn Website</h1>
+
     <p>Welkom op mijn website</p>
 
     <button>klik hier</button>
@@ -39,11 +46,15 @@
     <button onclick="hallo()">klik mij</button>
 
     <h2>Mijn fortnite team</h2>
+
     <p>wij zoeken nieuwe spelers!</p>
 
-    <div id="klok"></div>
+    <h5>DE GOAT</h5>
+
+    <div id="klok">00:00:00</div>
 
     <h3>Teamleden</h3>
+
     <p>Thijs - Teamleider</p>
 
     <img src="https://fortnite-api.com/images/cosmetics/br/character_default/icon.png">
@@ -59,37 +70,36 @@
     </div>
 
     <script>
+
         function hallo() {
             alert("hoi!");
-            function updateKlok() {
-    let tijd = new Date();
-
-    let uren = tijd.getHours();
-    let minuten = tijd.getMinutes();
-    let seconden = tijd.getSeconds();
-
-    document.getElementById("klok").innerText =
-        uren + ":" + minuten + ":" + seconden;
-}
-
-setInterval(updateKlok, 1000);
-
-updateKlok();
         }
+
+        function updateKlok() {
+            let tijd = new Date();
+
+            let uren = tijd.getHours();
+            let minuten = tijd.getMinutes();
+            let seconden = tijd.getSeconds();
+
+            if (minuten < 10) {
+                minuten = "0" + minuten;
+            }
+
+            if (seconden < 10) {
+                seconden = "0" + seconden;
+            }
+
+            document.getElementById("klok").innerText =
+                uren + ":" + minuten + ":" + seconden;
+        }
+
+        setInterval(updateKlok, 1000);
+
+        updateKlok();
+
     </script>
 
 </body>
 
 </html>
-<!DOCTYPE html>
-<html lang="nl">
-
-<head>
-    <meta charset="UTF-8">
-    <h5>DE GOAT</h5>
-</head>
-        <div class="teamkaart">
-            <h6>Thijs</h6>
-            <p>Teamlid</p>
-        </div>
-
