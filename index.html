@@ -41,6 +41,8 @@
     <h2>Mijn fortnite team</h2>
     <p>wij zoeken nieuwe spelers!</p>
 
+    <div id="klok"></div>
+
     <h3>Teamleden</h3>
     <p>Thijs - Teamleider</p>
 
@@ -59,6 +61,20 @@
     <script>
         function hallo() {
             alert("hoi!");
+            function updateKlok() {
+    let tijd = new Date();
+
+    let uren = tijd.getHours();
+    let minuten = tijd.getMinutes();
+    let seconden = tijd.getSeconds();
+
+    document.getElementById("klok").innerText =
+        uren + ":" + minuten + ":" + seconden;
+}
+
+setInterval(updateKlok, 1000);
+
+updateKlok();
         }
     </script>
 
